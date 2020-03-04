@@ -1,6 +1,9 @@
 @import '../../mixin.scss';
 ::ng-deep app-home {
   .background-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: url('../../assets/imgs/bg/Nature2_L.jpg');
     width: inherit;
     height: 969px;
