@@ -1,0 +1,15 @@
+@import '../../mixin.scss';
+::ng-deep app-home {
+  .background-container {
+    background-image: url('../../assets/imgs/bg/Nature2_L.jpg');
+    width: inherit;
+    height: 969px;
+    padding: 0;
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #ddd;
+    @include filter(brightness(0.85), blur(0.2px));
+  }
+}

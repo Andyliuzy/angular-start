@@ -1,0 +1,13 @@
+@import './variables.scss';
+
+@mixin filter($filters...) {
+  $filters-combined: '';
+  @each $filter in $filters {
+    $filters-combined: #{$filters-combined} $filter;
+  }
+  -webkit-filter: $filters-combined;
+  -moz-filter: $filters-combined;
+  -ms-filter: $filters-combined;
+  -o-filter: $filters-combined;
+  filter: $filters-combined;
+}
