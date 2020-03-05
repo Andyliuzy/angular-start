@@ -14,5 +14,14 @@
     background-position: center center;
     background-color: #ddd;
     @include filter(brightness(0.85), blur(0.2px));
+
+    .title {
+      font-size: 60px;
+      font-weight: 600;
+      padding: 40px 40px;
+      border-radius: 50%;
+      background-color: rgba(205, 220, 57, 0.3);
+      color: #ffffff;
+    }
   }
 }
