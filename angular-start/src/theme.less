@@ -1,4 +1,4 @@
-@import "../node_modules/ng-zorro-antd/ng-zorro-antd.less";
+@import '../node_modules/ng-zorro-antd/ng-zorro-antd.less';
 // The prefix to use on all css classes from ant.
 @ant-prefix: ant;
 
@@ -7,6 +7,7 @@
 
 // -------- Colors -----------
 @primary-color: @blue-6;
+@icon-url: '/assets/fonts/iconfont';
 @info-color: @blue-6;
 @success-color: @green-6;
 @processing-color: @blue-6;
@@ -19,15 +20,21 @@
 
 // Color used by default to control hover and active backgrounds and for
 // alert info backgrounds.
-@primary-1: color(~`colorPalette('@{primary-color}', 1) `); // replace tint(@primary-color, 90%)
-@primary-2: color(~`colorPalette('@{primary-color}', 2) `); // replace tint(@primary-color, 80%)
+@primary-1: color(
+  ~`colorPalette('@{primary-color}', 1) `
+); // replace tint(@primary-color, 90%)
+@primary-2: color(
+  ~`colorPalette('@{primary-color}', 2) `
+); // replace tint(@primary-color, 80%)
 @primary-3: color(~`colorPalette('@{primary-color}', 3) `); // unused
 @primary-4: color(~`colorPalette('@{primary-color}', 4) `); // unused
 @primary-5: color(
   ~`colorPalette('@{primary-color}', 5) `
 ); // color used to control the text color in many active and hover states, replace tint(@primary-color, 20%)
 @primary-6: @primary-color; // color used to control the text color of active buttons, don't use, use @primary-color
-@primary-7: color(~`colorPalette('@{primary-color}', 7) `); // replace shade(@primary-color, 5%)
+@primary-7: color(
+  ~`colorPalette('@{primary-color}', 7) `
+); // replace shade(@primary-color, 5%)
 @primary-8: color(~`colorPalette('@{primary-color}', 8) `); // unused
 @primary-9: color(~`colorPalette('@{primary-color}', 9) `); // unused
 @primary-10: color(~`colorPalette('@{primary-color}', 10) `); // unused
@@ -39,10 +46,11 @@
 @body-background: #fff;
 // Base background color for most components
 @component-background: #fff;
-@font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
-'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-'Segoe UI Emoji', 'Segoe UI Symbol';
-@code-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+@font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+  'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial,
+  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+@code-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
+  monospace;
 @text-color: fade(@black, 65%);
 @text-color-secondary: fade(@black, 45%);
 @text-color-inverse: @white;
@@ -119,7 +127,11 @@
 @outline-width: 2px;
 @outline-color: @primary-color;
 
-@background-color-light: hsv(0, 0, 98%); // background of header and selected item
+@background-color-light: hsv(
+  0,
+  0,
+  98%
+); // background of header and selected item
 @background-color-base: hsv(0, 0, 96%); // Default grey background color
 
 // Disabled states
@@ -680,4 +692,3 @@
 // Typography
 // ---
 @typography-title-font-weight: 600;
-

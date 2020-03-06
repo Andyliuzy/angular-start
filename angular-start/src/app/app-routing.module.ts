@@ -6,11 +6,21 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'home'
+    redirectTo: 'user'
   },
   {
-    path: 'home',
-    component: HomeComponent
+    path: 'user',
+    component: HomeComponent,
+    children: [
+      {
+        path: 'cats',
+        loadChildren: () => import('./cats/index').then(m => m.CatModule)
+      },
+      {
+        path: 'dashboard',
+        loadChildren: () => import('./user/index').then(m => m.UserModule)
+      }
+    ]
   }
 ];
 

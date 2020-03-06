@@ -1,3 +1,54 @@
-<div class="background-container">
-  <div class="title">Welcome to Angular</div>
-</div>
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="200px">
+    <div class="logo">{{ isCollapsed ? '' : '达澳学院' }}</div>
+    <ul
+      nz-menu
+      nzTheme="dark"
+      nzMode="inline"
+      [nzInlineCollapsed]="isCollapsed"
+    >
+      <li nz-submenu nzTitle="User">
+        <ul>
+          <li nz-menu-item>Tom</li>
+          <li nz-menu-item>Bill</li>
+          <li nz-menu-item>Alex</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Team">
+        <ul>
+          <li nz-menu-item>Team 1</li>
+          <li nz-menu-item>Team 2</li>
+        </ul>
+      </li>
+      <li nz-menu-item>
+        <span>File</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <ul
+        nz-menu
+        [nzTheme]="'dark'"
+        [nzMode]="'horizontal'"
+        class="header-menu"
+      >
+        <li nz-menu-item nzSelected [routerLink]="['/']">Home</li>
+        <li nz-menu-item [routerLink]="['cats/list']">Cat List</li>
+        <li nz-menu-item [routerLink]="['dashboard']">My Cats</li>
+      </ul>
+    </nz-header>
+    <nz-content>
+      <!-- <div class="background-container"></div> -->
+      <router-outlet></router-outlet>
+      <!-- <nz-breadcrumb>
+        <nz-breadcrumb-item>User</nz-breadcrumb-item>
+        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+      </nz-breadcrumb> -->
+      <!-- <div class="inner-content">
+        Bill is a cat.
+      </div> -->
+    </nz-content>
+    <nz-footer>Daao IT ©2020</nz-footer>
+  </nz-layout>
+</nz-layout>

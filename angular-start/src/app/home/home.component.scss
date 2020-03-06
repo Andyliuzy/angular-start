@@ -1,27 +1,67 @@
 @import '../../mixin.scss';
 ::ng-deep app-home {
-  .background-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../../assets/imgs/bg/Nature2_L.jpg');
-    width: inherit;
-    height: 969px;
-    padding: 0;
-    margin: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: #ddd;
-    @include filter(brightness(0.85), blur(0.2px));
+  nz-layout {
+    height: 100%;
 
-    .title {
-      font-size: 60px;
-      font-weight: 600;
-      padding: 40px 40px;
-      border-radius: 50%;
-      background-color: rgba(205, 220, 57, 0.3);
+    nz-sider.ant-layout-sider-collapsed {
+      .logo {
+        background-image: url('.././../assets/imgs/bg/organization_icon.png');
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        margin: 0;
+        background-color: #ffffff;
+        margin-left: 20px !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+
+    .logo {
+      height: 32px;
+      background: rgba(255, 255, 255, 0.2);
+      margin: 16px;
       color: #ffffff;
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+    }
+
+    nz-header {
+      background: #fff;
+      padding: 0;
+    }
+
+    nz-content {
+      .background-container {
+        background-image: url('../../assets/imgs/bg/cat-sleeping-in-flowers.jpg');
+        width: inherit;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: #ddd;
+        @include filter(brightness(0.75), blur(0.2px));
+      }
+    }
+
+    nz-breadcrumb {
+      margin: 16px 0;
+    }
+
+    .inner-content {
+      padding: 24px;
+      background: #fff;
+      min-height: 360px;
+    }
+
+    nz-footer {
+      text-align: center;
+      padding: 13px 50px !important;
     }
   }
 }
