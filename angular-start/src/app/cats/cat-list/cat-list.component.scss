@@ -2,5 +2,7 @@
   .list-container {
     display: flex;
     margin: 40px 40px;
+    max-width: 100%;
+    flex-wrap: wrap;
   }
 }
