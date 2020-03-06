@@ -1,5 +1,5 @@
 <div class="list-container">
   <ng-container *ngFor="let cat of catlist$ | async">
-    <app-cat-detail></app-cat-detail>
+    <app-cat-detail [cat]="cat"></app-cat-detail>
   </ng-container>
 </div>

@@ -1,3 +1,11 @@
 ::ng-deep app-cat-detail {
   margin: 0px 10px;
+
+  nz-card {
+    nz-card-meta {
+      .ant-card-meta-detail {
+        min-height: 115px;
+      }
+    }
+  }
 }
