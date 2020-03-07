@@ -1,0 +1,27 @@
+<div class="profile-container" *ngIf="currentCat">
+  <div class="name-container child-element">
+    {{ currentCat.name }}'s Profile
+  </div>
+  <div class="image-container child-element">
+    <img [src]="currentCat.src" />
+  </div>
+  <div class="detail-container child-element">
+    <div class="detail-header">Details</div>
+    <nz-divider></nz-divider>
+    <div class="detail-content">
+      <div
+        *ngFor="
+          let propperty of getKeys(currentCat, ['name', 'src', 'description'])
+        "
+      >
+        {{ getKey(propperty) }}: {{ getvalue(propperty) }}
+      </div>
+    </div>
+  </div>
+  <div class="description-container child-element">
+    A little bit about {{ currentCat.name }}
+    <div class="description-content">
+      {{ currentCat.description }}
+    </div>
+  </div>
+</div>

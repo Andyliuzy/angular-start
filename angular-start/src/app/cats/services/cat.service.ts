@@ -11,4 +11,8 @@ export class CatService {
   getCat() {
     return this.httpClient.get(`${this.SERVER_URL}/cats`);
   }
+
+  getCatById(id: string) {
+    return this.httpClient.get(`${this.SERVER_URL}/cats/${id}`);
+  }
 }

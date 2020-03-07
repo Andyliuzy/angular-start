@@ -7,14 +7,9 @@
   <nz-card-meta
     [nzTitle]="cat.name"
     [nzDescription]="cat.description"
-    [nzAvatar]="avatarTemplate"
+    [routerLink]="['../', cat.id]"
   ></nz-card-meta>
 </nz-card>
-<ng-template #avatarTemplate>
-  <nz-avatar
-    nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-  ></nz-avatar>
-</ng-template>
 <ng-template #coverTemplate>
   <img alt="cat" [src]="cat.src" (click)="clickImage(cat)" />
 </ng-template>

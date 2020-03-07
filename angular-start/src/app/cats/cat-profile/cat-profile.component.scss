@@ -1,0 +1,36 @@
+::ng-deep app-cat-profile {
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 15%;
+
+    nz-divider {
+      background-color: #9e9e9e;
+    }
+
+    .child-element {
+      width: 100%;
+      margin-top: 30px;
+    }
+
+    .name-container {
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    .image-container {
+      img {
+        width: 100%;
+      }
+    }
+
+    .detail-container {
+      .detail-header {
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+}
