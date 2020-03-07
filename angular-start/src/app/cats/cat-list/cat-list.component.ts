@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CatService } from '../services/cat.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { CatService } from '../services/cat.service';
   styleUrls: ['./cat-list.component.scss']
 })
 export class CatListComponent implements OnInit {
-  catlist$;
+  catlist$: Observable<any>;
   constructor(private catService: CatService) {}
 
   ngOnInit() {

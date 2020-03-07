@@ -1,8 +1,11 @@
 ::ng-deep app-cat-list {
   .list-container {
     display: flex;
-    margin: 40px 40px;
+    padding: 0 30px;
     max-width: 100%;
     flex-wrap: wrap;
+    max-height: 850px;
+    position: relative;
+    overflow-y: auto;
   }
 }

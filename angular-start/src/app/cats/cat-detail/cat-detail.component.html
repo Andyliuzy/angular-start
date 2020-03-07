@@ -16,14 +16,26 @@
   ></nz-avatar>
 </ng-template>
 <ng-template #coverTemplate>
-  <img alt="cat" [src]="cat.src" />
+  <img alt="cat" [src]="cat.src" (click)="clickImage(cat)" />
 </ng-template>
 <ng-template #actionSetting>
-  <i nz-icon nzType="setting"></i>
+  <i class="material-icons md-18">settings</i>
 </ng-template>
 <ng-template #actionEdit>
-  <i nz-icon nzType="edit"></i>
+  <i class="material-icons md-18">edit</i>
 </ng-template>
 <ng-template #actionEllipsis>
-  <i nz-icon nzType="ellipsis"></i>
+  <i class="material-icons md-18">more_horiz</i>
 </ng-template>
+
+<nz-modal
+  nzClosable
+  [nzFooter]="null"
+  [(nzVisible)]="imageVisible"
+  nzWrapClassName="cat-image"
+  (nzOnCancel)="handleCancel()"
+>
+  <ng-container>
+    <img *ngIf="selectedCat" [src]="selectedCat.src" />
+  </ng-container>
+</nz-modal>

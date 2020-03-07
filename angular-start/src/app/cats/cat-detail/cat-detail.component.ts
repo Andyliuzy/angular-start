@@ -7,9 +7,23 @@ import { Cat } from '../models/cat.model';
   styleUrls: ['./cat-detail.component.scss']
 })
 export class CatDetailComponent implements OnInit {
+  imageVisible = false;
+  selectedCat: Cat;
   @Input() cat: Cat;
 
   constructor() {}
 
   ngOnInit() {}
+
+  clickImage(cat: Cat) {
+    this.selectedCat = cat;
+    this.imageVisible = true;
+  }
+
+  handleCancel() {
+    setTimeout(() => {
+      this.selectedCat = null;
+      this.imageVisible = false;
+    });
+  }
 }
