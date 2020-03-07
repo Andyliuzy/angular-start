@@ -43,7 +43,8 @@ export class DataService implements InMemoryDbService {
         src: '../../assets/imgs/cats/hunter.jpg',
         age: '3 years and 4 months',
         description:
-          'He is got a bold personality and he would love a big house where he can explore.',
+          // tslint:disable-next-line: max-line-length
+          'Handsome Hunter is an energetic boy who is looking for a home with someone who loves playing, but preferably with no young kids as he is very excitable and loves playing rough. He is got a bold personality and he would love a big house where he can explore. He is confident and outgoing and not afraid to let you know his opinions. But mostly he is just after attention. If Hunter sounds like the guy for you, come down to the Cranbourne shelter and meet him. It might be the best thing you do.',
         adopted: false,
         fee: 60
       },

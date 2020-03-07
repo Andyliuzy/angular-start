@@ -9,6 +9,7 @@ import { CatService } from '../services/cat.service';
 })
 export class CatListComponent implements OnInit {
   catlist$: Observable<any>;
+  isLoading = false;
   constructor(private catService: CatService) {}
 
   ngOnInit() {

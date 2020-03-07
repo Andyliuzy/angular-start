@@ -1,4 +1,10 @@
+<app-loading *ngIf="!currentCat"></app-loading>
 <div class="profile-container" *ngIf="currentCat">
+  <div class="return-button child-element">
+    <button nz-button nzType="primary" [routerLink]="['../', 'list']">
+      <i class="material-icons md-18">arrow_back</i>Back to list
+    </button>
+  </div>
   <div class="name-container child-element">
     {{ currentCat.name }}'s Profile
   </div>
@@ -10,16 +16,29 @@
     <nz-divider></nz-divider>
     <div class="detail-content">
       <div
+        class="detail-property"
         *ngFor="
           let propperty of getKeys(currentCat, ['name', 'src', 'description'])
         "
       >
-        {{ getKey(propperty) }}: {{ getvalue(propperty) }}
+        <div class="property-title">{{ getKey(propperty) }}:</div>
+        <div class="property-content">
+          {{
+            propperty === 'fee'
+              ? (getvalue(propperty) | currency)
+              : propperty === 'adopted'
+              ? getvalue(propperty) === 'true'
+                ? 'Not Available'
+                : 'Available'
+              : getvalue(propperty)
+          }}
+        </div>
       </div>
     </div>
   </div>
   <div class="description-container child-element">
-    A little bit about {{ currentCat.name }}
+    <div class="detail-header">A little bit about {{ currentCat.name }}</div>
+    <nz-divider></nz-divider>
     <div class="description-content">
       {{ currentCat.description }}
     </div>

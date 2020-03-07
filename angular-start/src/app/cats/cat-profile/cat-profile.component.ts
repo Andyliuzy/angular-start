@@ -14,9 +14,10 @@ export class CatProfileComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.params.catId;
-    this.catService
-      .getCatById(id)
-      .subscribe(cat => (this.currentCat = cat as Cat));
+    this.catService.getCatById(id).subscribe(cat => {
+      this.currentCat = cat as Cat;
+      console.log('---> current cat: ', this.currentCat);
+    });
   }
 
   getKeys(cat: Cat, filterKeys = []) {

@@ -1,5 +1,8 @@
-<div class="list-container">
+<div class="list-container" *ngIf="catlist$ | async; else loading">
   <ng-container *ngFor="let cat of catlist$ | async">
     <app-cat-detail [cat]="cat"></app-cat-detail>
   </ng-container>
 </div>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

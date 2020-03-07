@@ -33,9 +33,15 @@
         [nzMode]="'horizontal'"
         class="header-menu"
       >
-        <li nz-menu-item nzSelected [routerLink]="['/']">Home</li>
-        <li nz-menu-item [routerLink]="['cats/list']">Cat List</li>
-        <li nz-menu-item [routerLink]="['dashboard']">My Cats</li>
+        <li nz-menu-item [nzSelected]="isHomePage" [routerLink]="['/']">
+          Home
+        </li>
+        <li nz-menu-item [nzSelected]="isCatPage" [routerLink]="['cats/list']">
+          Cat List
+        </li>
+        <li nz-menu-item [nzSelected]="isUserPage" [routerLink]="['dashboard']">
+          My Cats
+        </li>
       </ul>
     </nz-header>
     <nz-content>
