@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Cat } from '../models/cat.model';
 import { CatService } from '../services/cat.service';
 
@@ -8,16 +9,21 @@ import { CatService } from '../services/cat.service';
   templateUrl: './cat-profile.component.html',
   styleUrls: ['./cat-profile.component.scss']
 })
-export class CatProfileComponent implements OnInit {
+export class CatProfileComponent implements OnInit, OnDestroy {
   currentCat: Cat;
+  routeParamsSub: Subscription;
   constructor(private route: ActivatedRoute, private catService: CatService) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.params.catId;
-    this.catService.getCatById(id).subscribe(cat => {
-      this.currentCat = cat as Cat;
-      console.log('---> current cat: ', this.currentCat);
+    this.routeParamsSub = this.route.params.subscribe(params => {
+      this.catService.getCatById(params.catId).subscribe(cat => {
+        this.currentCat = cat as Cat;
+      });
     });
+  }
+
+  ngOnDestroy() {
+    this.routeParamsSub.unsubscribe();
   }
 
   getKeys(cat: Cat, filterKeys = []) {

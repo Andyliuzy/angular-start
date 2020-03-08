@@ -1,12 +1,45 @@
+@import '../../../variables.scss';
+
 ::ng-deep app-cat-detail {
   margin: 20px 20px;
 
   nz-card {
+    &.adopted {
+      &::before {
+        content: 'Adopted';
+        position: absolute;
+        right: 0;
+        top: 75px;
+        width: 100%;
+        height: 40px;
+        background-color: $rw-error-color;
+        opacity: 0.8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: 500;
+        color: $rw-white-color;
+      }
+    }
+
     nz-card-meta {
       .ant-card-meta-detail {
         min-height: 140px;
         max-height: 140px;
+
+        display: block;
+        display: -webkit-box;
+        max-width: 250px;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
+    }
+
+    .subscribed-icon {
+      color: $rw-subscribed-color;
     }
   }
 }

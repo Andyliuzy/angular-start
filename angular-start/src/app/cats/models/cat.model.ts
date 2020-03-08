@@ -7,7 +7,13 @@ export interface Cat {
   age: string;
   description: string;
   adopted: boolean;
+  subscribed: boolean;
   fee: number;
+}
+
+export interface UpdateCat {
+  type: string;
+  cat: Cat;
 }
 
 export enum Gender {

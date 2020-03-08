@@ -1,5 +1,5 @@
 <nz-layout>
-  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="200px">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="220px">
     <div class="logo">{{ isCollapsed ? '' : '达澳学院' }}</div>
     <ul
       nz-menu
@@ -7,21 +7,34 @@
       nzMode="inline"
       [nzInlineCollapsed]="isCollapsed"
     >
-      <li nz-submenu nzTitle="User">
+      <li
+        nz-submenu
+        nzTitle="Subscribed Cats ({{ (subscribedCats$ | async)?.length }})"
+        nzIcon="eye"
+      >
         <ul>
-          <li nz-menu-item>Tom</li>
-          <li nz-menu-item>Bill</li>
-          <li nz-menu-item>Alex</li>
+          <li
+            nz-menu-item
+            *ngFor="let subscribedCat of subscribedCats$ | async"
+          >
+            {{ subscribedCat.name }}
+          </li>
         </ul>
       </li>
-      <li nz-submenu nzTitle="Team">
+      <li
+        nz-submenu
+        nzTitle="Adpoted Cats ({{ (adoptedCats$ | async)?.length }})"
+        nzIcon="file"
+      >
         <ul>
-          <li nz-menu-item>Team 1</li>
-          <li nz-menu-item>Team 2</li>
+          <li
+            nz-menu-item
+            *ngFor="let adoptedCat of adoptedCats$ | async"
+            [routerLink]="['/user/cats', adoptedCat.id]"
+          >
+            {{ adoptedCat.name }}
+          </li>
         </ul>
-      </li>
-      <li nz-menu-item>
-        <span>File</span>
       </li>
     </ul>
   </nz-sider>

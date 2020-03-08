@@ -2,7 +2,8 @@
   style="width:300px;"
   nzHoverable
   [nzCover]="coverTemplate"
-  [nzActions]="[actionSetting, actionEdit, actionEllipsis]"
+  [nzActions]="[actionSetting, actionEdit]"
+  [ngClass]="{ adopted: cat.adopted }"
 >
   <nz-card-meta
     [nzTitle]="cat.name"
@@ -14,13 +15,25 @@
   <img alt="cat" [src]="cat.src" (click)="clickImage(cat)" />
 </ng-template>
 <ng-template #actionSetting>
-  <i class="material-icons md-18">settings</i>
+  <i
+    (click)="subcribeCat()"
+    class="material-icons md-18 subscribed-icon"
+    [ngClass]="{ filled: cat.subscribed }"
+    nzTooltipTitle="{{ cat.subscribed ? 'Unsubscribe' : 'Subscribe' }}"
+    nzTooltipPlacement="bottom"
+    nz-tooltip
+    >{{ cat.subscribed ? 'favorite' : 'favorite_border' }}</i
+  >
 </ng-template>
 <ng-template #actionEdit>
-  <i class="material-icons md-18">edit</i>
-</ng-template>
-<ng-template #actionEllipsis>
-  <i class="material-icons md-18">more_horiz</i>
+  <i
+    (click)="adoptCat()"
+    class="material-icons md-18"
+    nzTooltipTitle="Adopt"
+    nzTooltipPlacement="bottom"
+    nz-tooltip
+    >shopping_cart</i
+  >
 </ng-template>
 
 <nz-modal

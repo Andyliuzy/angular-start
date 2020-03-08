@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Cat } from '../models/cat.model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Cat, UpdateCat } from '../models/cat.model';
 
 @Component({
   selector: 'app-cat-detail',
@@ -9,7 +9,10 @@ import { Cat } from '../models/cat.model';
 export class CatDetailComponent implements OnInit {
   imageVisible = false;
   selectedCat: Cat;
+
   @Input() cat: Cat;
+
+  @Output() updateCat$: EventEmitter<UpdateCat> = new EventEmitter<UpdateCat>();
 
   constructor() {}
 
@@ -24,6 +27,24 @@ export class CatDetailComponent implements OnInit {
     setTimeout(() => {
       this.selectedCat = null;
       this.imageVisible = false;
+    });
+  }
+
+  subcribeCat() {
+    const targetCat = Object.assign({}, this.cat);
+    targetCat.subscribed = !targetCat.subscribed;
+    this.updateCat$.emit({
+      type: 'subscribe',
+      cat: targetCat
+    });
+  }
+
+  adoptCat() {
+    const targetCat = Object.assign({}, this.cat);
+    targetCat.adopted = !targetCat.adopted;
+    this.updateCat$.emit({
+      type: 'adopted',
+      cat: targetCat
     });
   }
 }
