@@ -1,0 +1,23 @@
+<div class="background-container">
+  <div class="greeting-container">
+    {{ greetingMessage }}
+  </div>
+  <div class="event-container">
+    <nz-timeline nzMode="alternate">
+      <nz-timeline-item>Cat Adoption Event open 2020-03-01</nz-timeline-item>
+      <nz-timeline-item nzColor="green">Registion 2020-03-04</nz-timeline-item>
+      <nz-timeline-item [nzDot]="dotTemplate">
+        Submit application 2020-03-07
+      </nz-timeline-item>
+      <nz-timeline-item nzColor="red"
+        >Waiting for approve present</nz-timeline-item
+      >
+    </nz-timeline>
+    <ng-template #dotTemplate>
+      <i nz-icon nzType="clock-circle-o" style="font-size: 16px;"></i>
+    </ng-template>
+  </div>
+  <div class="cutdown-container">
+    <nz-countdown [nzValue]="deadline" [nzTitle]="'Time Left'"></nz-countdown>
+  </div>
+</div>

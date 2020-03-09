@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { of } from 'rxjs';
 import { Cat, Gender } from '../cats/models/cat.model';
+import { User } from '../user/models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -94,6 +95,11 @@ export class DataService implements InMemoryDbService {
         fee: 225
       }
     ];
-    return of({ cats });
+    const loginUser: User = {
+      firstName: 'Andy',
+      lastName: 'Liu',
+      email: 'zhenyliu@gmail.com'
+    };
+    return of({ cats, loginUser });
   }
 }

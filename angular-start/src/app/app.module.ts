@@ -11,10 +11,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DataService } from './services/data.service';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, WelcomePageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
