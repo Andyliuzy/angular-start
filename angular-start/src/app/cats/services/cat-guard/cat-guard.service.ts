@@ -15,7 +15,7 @@ export class CatGuardService implements CanActivate {
       tap(result => {
         if (!result) {
           this.modalService.error({
-            nzClassName: 'error-modal-dialog',
+            nzClassName: 'custom-modal-dialog',
             nzTitle: 'Access Deny',
             nzContent:
               'Sorry, you do not have the access to this page. Please contact admin for help.'

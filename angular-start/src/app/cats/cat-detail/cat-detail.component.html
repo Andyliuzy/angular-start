@@ -27,12 +27,12 @@
 </ng-template>
 <ng-template #actionEdit>
   <i
-    (click)="adoptCat()"
-    class="material-icons md-18"
-    nzTooltipTitle="Adopt"
+    (click)="confirmAdoption()"
+    class="material-icons md-18 adopted-icon"
+    nzTooltipTitle="{{ cat.adopted ? 'Cancel Adoption' : 'Adopt' }}"
     nzTooltipPlacement="bottom"
     nz-tooltip
-    >shopping_cart</i
+    >{{ cat.adopted ? 'remove_shopping_cart' : 'shopping_cart' }}</i
   >
 </ng-template>
 

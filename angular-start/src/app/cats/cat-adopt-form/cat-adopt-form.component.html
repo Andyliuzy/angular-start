@@ -1,0 +1,26 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label nzRequired nzFor="firstName">First Name</nz-form-label>
+    <nz-form-control nzErrorTip="Please input your first name!">
+      <input id="firstName" type="text" nz-input formControlName="firstName" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzRequired nzFor="lastName">First Name</nz-form-label>
+    <nz-form-control nzErrorTip="Please input your last name!">
+      <input id="lastName" type="text" nz-input formControlName="lastName" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzRequired nzFor="email">Email</nz-form-label>
+    <nz-form-control nzErrorTip="Please input your email address!">
+      <input id="email" type="text" nz-input formControlName="email" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzRequired nzFor="date">Pick Date</nz-form-label>
+    <nz-form-control nzErrorTip="Please select your pick date!">
+      <nz-date-picker id="date" formControlName="date"></nz-date-picker>
+    </nz-form-control>
+  </nz-form-item>
+</form>
