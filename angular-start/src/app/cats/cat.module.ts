@@ -7,6 +7,7 @@ import { CatDetailComponent } from './cat-detail/cat-detail.component';
 import { CatListComponent } from './cat-list/cat-list.component';
 import { CatProfileComponent } from './cat-profile/cat-profile.component';
 import { CatRoutingModule } from './cat-routing.module';
+import { ActionPanelComponent } from './action-panel/action-panel.component';
 
 const COMPONENTS = [
   CatListComponent,
@@ -16,7 +17,7 @@ const COMPONENTS = [
 ];
 
 @NgModule({
-  declarations: [COMPONENTS],
+  declarations: [COMPONENTS, ActionPanelComponent],
   imports: [
     CommonModule,
     ShareModule,

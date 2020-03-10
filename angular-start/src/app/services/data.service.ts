@@ -35,7 +35,7 @@ export class DataService implements InMemoryDbService {
         description:
           'Handsome Hunter is an energetic boy who is looking for a home with someone who loves playing.',
         adopted: false,
-        subscribed: false,
+        subscribed: true,
         fee: 225
       },
       {

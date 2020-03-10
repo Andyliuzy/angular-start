@@ -1,0 +1,9 @@
+::ng-deep app-action-panel {
+  display: flex;
+  flex-direction: column;
+
+  .action-icon {
+    font-size: 25px;
+    width: 25px;
+  }
+}

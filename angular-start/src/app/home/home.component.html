@@ -16,6 +16,7 @@
           <li
             nz-menu-item
             *ngFor="let subscribedCat of subscribedCats$ | async"
+            [routerLink]="['/user/cats', subscribedCat.id]"
           >
             {{ subscribedCat.name }}
           </li>

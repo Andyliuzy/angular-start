@@ -1,0 +1,12 @@
+<ng-container>
+  <button nz-button nzType="primary" [nzSize]="'large'" nzShape="circle">
+    <i class="material-icons action-icon">{{
+      cat.subscribed ? 'favorite' : 'favorite_border'
+    }}</i>
+  </button>
+  <button nz-button nzType="primary" [nzSize]="'large'" nzShape="circle">
+    <i class="material-icons action-icon">{{
+      cat.adopted ? 'remove_shopping_cart' : 'shopping_cart'
+    }}</i>
+  </button>
+</ng-container>

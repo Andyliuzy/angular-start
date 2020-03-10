@@ -1,5 +1,6 @@
 <app-loading *ngIf="!currentCat"></app-loading>
 <div class="profile-container" *ngIf="currentCat">
+  <app-action-panel [cat]="currentCat"></app-action-panel>
   <div class="return-button child-element">
     <button nz-button nzType="primary" [routerLink]="['../', 'list']">
       <i class="material-icons md-18">arrow_back</i>Back to list
