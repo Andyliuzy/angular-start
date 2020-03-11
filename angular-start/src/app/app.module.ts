@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DataService } from './services/data.service';
+import { ShareModule } from './share/share.module';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 registerLocaleData(en);
 
@@ -26,6 +27,8 @@ registerLocaleData(en);
     NzIconModule,
     InMemoryWebApiModule.forRoot(DataService)
   ],
+  exports: [ShareModule],
+  entryComponents: [],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })

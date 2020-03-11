@@ -21,6 +21,7 @@ export class CatService {
   }
 
   updateCat(cat: Cat) {
+    console.log('---> update cat');
     return this.httpClient.put(`${this.SERVER_URL}/cats/${cat.id}`, cat, {
       observe: 'response'
     });

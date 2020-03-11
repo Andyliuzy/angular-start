@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd';
-import { CatAdoptFormComponent } from '../cat-adopt-form/cat-adopt-form.component';
 import { Cat, UpdateCat } from '../models/cat.model';
+import { CatHelperService } from '../services/cat-helper.service';
 
 @Component({
   selector: 'app-cat-detail',
@@ -16,7 +16,10 @@ export class CatDetailComponent implements OnInit {
 
   @Output() updateCat$: EventEmitter<UpdateCat> = new EventEmitter<UpdateCat>();
 
-  constructor(private modalService: NzModalService) {}
+  constructor(
+    private modalService: NzModalService,
+    private catHelperService: CatHelperService
+  ) {}
 
   ngOnInit() {}
 
@@ -42,27 +45,7 @@ export class CatDetailComponent implements OnInit {
   }
 
   confirmAdoption() {
-    if (!this.cat.adopted) {
-      const modal = this.modalService.create({
-        nzTitle: 'Personal Information',
-        nzContent: CatAdoptFormComponent,
-        nzOnOk: (instance: CatAdoptFormComponent) => {
-          instance.submitForm();
-          if (instance.validateForm.status === 'VALID') {
-            this.adoptCat();
-          }
-          return instance.validateForm.status === 'VALID';
-        }
-      });
-    } else {
-      this.modalService.confirm({
-        nzClassName: 'custom-modal-dialog',
-        nzTitle: 'Do you want to cancel this addoption?',
-        nzContent:
-          'This operation may casue you unable to adopt the same cat agian, still continue?',
-        nzOnOk: () => this.adoptCat()
-      });
-    }
+    this.catHelperService.confirmAdoption(this.cat, () => this.adoptCat());
   }
 
   adoptCat() {
